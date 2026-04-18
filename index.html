@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>日本語学習タイプ診断</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="card" id="introSection">
+      <h1>あなたに合う日本語学習法診断</h1>
+      <p class="lead">
+        3分で、あなたに合った勉強方法がわかります。
+      </p>
+      <button id="startButton" class="primary-btn">診断をはじめる</button>
+    </section>
+
+    <section class="card hidden" id="formSection">
+      <h2>質問に答えてください</h2>
+      <form id="diagnosisForm">
+        <div class="question">
+          <label for="purpose">1. 日本語を勉強する一番大きな目的は何ですか？</label>
+          <select id="purpose" name="purpose" required>
+            <option value="">選んでください</option>
+            <option value="jlpt">JLPTに合格したい</option>
+            <option value="conversation">会話がもっとできるようになりたい</option>
+            <option value="job">日本で就職活動をしたい</option>
+            <option value="work">仕事で日本語が必要</option>
+            <option value="study">日本の学校・大学に進学したい</option>
+            <option value="life">日本での生活をもっと楽にしたい</option>
+          </select>
+        </div>
+
+        <div class="question">
+          <label for="level">2. 今の日本語レベルは？</label>
+          <select id="level" name="level" required>
+            <option value="">選んでください</option>
+            <option value="n4">JLPT N4くらい</option>
+            <option value="n3">JLPT N3くらい</option>
+            <option value="n2">JLPT N2くらい</option>
+          </select>
+        </div>
+
+        <div class="question">
+          <label for="weakness">3. いちばん苦手なのは？</label>
+          <select id="weakness" name="weakness" required>
+            <option value="">選んでください</option>
+            <option value="vocabulary">語彙・漢字</option>
+            <option value="grammar">文法</option>
+            <option value="reading">読解</option>
+            <option value="listening">聴解</option>
+            <option value="speaking">会話</option>
+            <option value="writing">書くこと</option>
+          </select>
+        </div>
+
+        <div class="question">
+          <label for="studyFrequency">4. ふだん自習できる頻度は？</label>
+          <select id="studyFrequency" name="studyFrequency" required>
+            <option value="">選んでください</option>
+            <option value="intensive">ほぼ毎日（1時間以上できる）</option>
+            <option value="mypace">週2〜3回くらい</option>
+          </select>
+        </div>
+
+        <div class="question">
+          <label for="location">5. 今どこに住んでいますか？</label>
+          <select id="location" name="location" required>
+            <option value="">選んでください</option>
+            <option value="japan">日本</option>
+            <option value="outside_japan">日本以外</option>
+          </select>
+        </div>
+
+        <div class="question">
+          <label for="futurePlan">6. これからの予定に一番近いものは？</label>
+          <select id="futurePlan" name="futurePlan" required>
+            <option value="">選んでください</option>
+            <option value="work_japan">日本で働きたい</option>
+            <option value="study_japan">日本で進学したい</option>
+            <option value="live_japan">日本で生活したい</option>
+            <option value="pass_exam">試験に合格したい</option>
+            <option value="improve_general">全体的に上達したい</option>
+          </select>
+        </div>
+
+        <div class="question">
+          <label for="name">7. 名前（任意）</label>
+          <input type="text" id="name" name="name" placeholder="例: Maria" />
+        </div>
+
+        <div class="question">
+          <label for="email">8. メールアドレス（任意）</label>
+          <input type="email" id="email" name="email" placeholder="example@email.com" />
+        </div>
+
+        <div class="question checkbox">
+          <label>
+            <input type="checkbox" id="consent" name="consent" required />
+            回答内容を学習支援とサービス改善のために保存することに同意します。
+          </label>
+        </div>
+
+        <button type="submit" class="primary-btn">診断する</button>
+      </form>
+    </section>
+
+    <section class="card hidden" id="resultSection">
+      <h2>診断結果</h2>
+      <div id="resultContent"></div>
+      <button id="retryButton" class="secondary-btn">もう一度診断する</button>
+    </section>
+  </main>
+
+  <script src="result-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
