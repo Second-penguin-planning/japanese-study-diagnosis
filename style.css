@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #222;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  margin-top: 24px;
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+}
+
+.lead {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.question {
+  margin-bottom: 18px;
+}
+
+.question label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.question select,
+.question input[type="text"],
+.question input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d6dbe3;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.checkbox label {
+  font-weight: normal;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.primary-btn,
+.secondary-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.secondary-btn {
+  background: #e5e7eb;
+  color: #222;
+  margin-top: 16px;
+}
+
+.hidden {
+  display: none;
+}
+
+.result-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.result-box ul {
+  padding-left: 20px;
+}
+
+.tag {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1d4ed8;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 14px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
