@@ -118,7 +118,7 @@ function translateWeakness(value) {
 }
 
 async function sendToBackend(answers, diagnosis, resultData) {
-  const endpoint = "https://YOUR_WORKER_URL.workers.dev";
+  const endpoint = "https://japanese-diagnosis-api.nameless-lake-227d.workers.dev";
 
   const payload = {
     createdAt: new Date().toISOString(),
