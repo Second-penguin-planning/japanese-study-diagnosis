@@ -121,11 +121,20 @@ async function sendToBackend(answers, diagnosis, resultData) {
   const endpoint = "https://japanese-diagnosis-api.nameless-lake-227d.workers.dev";
 
   const payload = {
-    createdAt: new Date().toISOString(),
-    ...answers,
-    diagnosisType: resultData.typeName,
-    studyStyle: resultData.styleName,
-    resultKey: `${diagnosis.mainType}_${diagnosis.studyStyle}`
+    created_at: new Date().toISOString(),
+    name: answers.name,
+    email: answers.email,
+    source: answers.source,
+    purpose: answers.purpose,
+    level: answers.level,
+    weakness: answers.weakness,
+    study_frequency: answers.studyFrequency,
+    location: answers.location,
+    future_plan: answers.futurePlan,
+    diagnosis_type: resultData.typeName,
+    study_style: resultData.styleName,
+    result_key: `${diagnosis.mainType}_${diagnosis.studyStyle}`,
+    consent: answers.consent ? "true" : "false"
   };
 
   const response = await fetch(endpoint, {
@@ -137,7 +146,8 @@ async function sendToBackend(answers, diagnosis, resultData) {
   });
 
   if (!response.ok) {
-    throw new Error("Backend request failed");
+    const errorText = await response.text();
+    throw new Error(`Backend request failed: ${errorText}`);
   }
 
   return response.json();
